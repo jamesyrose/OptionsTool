@@ -19,7 +19,7 @@ def get_data(symbol, apiKey):
     endpoint = f"https://api.tdameritrade.com/v1/marketdata/chains?apikey={apiKey}"
     payload = {"symbol": symbol,
                "contractType": "ALL",
-               "strikeCount": 10,
+               "strikeCount": 20,
                "includeQuotes": False,
                "strategy": "SINGLE",
                "range": "ALL",
@@ -132,7 +132,7 @@ def option_main(symbol, apiKey, col="bid", rightLeft=True):
     :param symbol: ticker symbol (str)
     :param apiKey:  TDA API key (str)
     :param col:  column for calculation (str)
-    :param rightLeft:  left is ascending strike price (bool)
+    :param rightLeft:  right is ascending strike price (bool)
     :return: dict
     """
     tmp_dir = os.path.join(os.getcwd(), '.tmp')
